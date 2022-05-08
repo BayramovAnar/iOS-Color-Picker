@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9gu-7L-dSl">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Color Picker-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ColorPresenterVC" customModule="Color_Picker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Black is a boring color. Choose a different color" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUk-3c-zkY">
+                                <rect key="frame" x="32" y="423" width="350" height="50.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="AWy-8d-xlo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sUk-3c-zkY" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4fI-ka-F8d"/>
+                            <constraint firstItem="sUk-3c-zkY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="AgT-vF-ADf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Color Picker" id="fmj-La-BQB">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="ZQ4-VX-oMM"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="bGT-EY-syW">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="VEg-pH-mVv" kind="show" identifier="presentColorPickerVC" id="MyV-ge-IDG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="colorNameLabel" destination="sUk-3c-zkY" id="NNe-ap-W40"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="114.50892857142857"/>
+        </scene>
+        <!--Color PickerVC-->
+        <scene sceneID="yy9-qz-asr">
+            <objects>
+                <viewController id="VEg-pH-mVv" customClass="ColorPickerVC" customModule="Color_Picker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DSG-N4-TJ2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="g4u-aN-dkL">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ePi-dN-rD9">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="136.5"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Blue" cornerStyle="capsule">
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="25"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="colorBtnWasPressedWithSender:" destination="VEg-pH-mVv" eventType="touchUpInside" id="bXC-mI-Wys"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="51C-Hn-psh">
+                                        <rect key="frame" x="0.0" y="159.5" width="414" height="136.5"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Yellow">
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="25"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="colorBtnWasPressedWithSender:" destination="VEg-pH-mVv" eventType="touchUpInside" id="biq-zA-DUq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJJ-m8-yYW">
+                                        <rect key="frame" x="0.0" y="319" width="414" height="136"/>
+                                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Green">
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="25"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="colorBtnWasPressedWithSender:" destination="VEg-pH-mVv" eventType="touchUpInside" id="5z4-vd-ncd"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6hv-Pn-HAe">
+                                        <rect key="frame" x="0.0" y="478" width="414" height="136.5"/>
+                                        <color key="backgroundColor" systemColor="systemRedColor"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Red">
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="25"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="colorBtnWasPressedWithSender:" destination="VEg-pH-mVv" eventType="touchUpInside" id="TvK-ec-uqp"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tfz-ZH-X0A">
+                                        <rect key="frame" x="0.0" y="637.5" width="414" height="136.5"/>
+                                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Purple">
+                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="25"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="colorBtnWasPressedWithSender:" destination="VEg-pH-mVv" eventType="touchUpInside" id="6FW-Xv-oLl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="6hv-Pn-HAe" firstAttribute="top" secondItem="SJJ-m8-yYW" secondAttribute="bottom" constant="10" id="2Sg-Rb-eOJ"/>
+                                    <constraint firstItem="ePi-dN-rD9" firstAttribute="top" secondItem="g4u-aN-dkL" secondAttribute="top" constant="10" id="8Tp-PG-Ggp"/>
+                                    <constraint firstItem="6hv-Pn-HAe" firstAttribute="top" secondItem="SJJ-m8-yYW" secondAttribute="bottom" constant="10" id="B9T-RK-wpx"/>
+                                    <constraint firstItem="Tfz-ZH-X0A" firstAttribute="top" secondItem="6hv-Pn-HAe" secondAttribute="bottom" constant="10" id="N5O-jS-pn7"/>
+                                    <constraint firstItem="51C-Hn-psh" firstAttribute="top" secondItem="ePi-dN-rD9" secondAttribute="bottom" constant="10" id="bAz-hC-bOn"/>
+                                    <constraint firstItem="Tfz-ZH-X0A" firstAttribute="top" secondItem="6hv-Pn-HAe" secondAttribute="bottom" constant="10" id="hSF-8H-eOB"/>
+                                    <constraint firstAttribute="bottom" secondItem="Tfz-ZH-X0A" secondAttribute="bottom" constant="10" id="jYP-FG-d5g"/>
+                                    <constraint firstItem="SJJ-m8-yYW" firstAttribute="top" secondItem="51C-Hn-psh" secondAttribute="bottom" constant="10" id="kr4-em-t5k"/>
+                                    <constraint firstItem="SJJ-m8-yYW" firstAttribute="top" secondItem="51C-Hn-psh" secondAttribute="bottom" constant="10" id="qNe-2n-1Zx"/>
+                                    <constraint firstItem="51C-Hn-psh" firstAttribute="top" secondItem="ePi-dN-rD9" secondAttribute="bottom" constant="10" id="wwM-Lh-AX1"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="pDz-fA-1nv"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pDz-fA-1nv" firstAttribute="trailing" secondItem="g4u-aN-dkL" secondAttribute="trailing" id="7Ef-lK-391"/>
+                            <constraint firstItem="g4u-aN-dkL" firstAttribute="leading" secondItem="pDz-fA-1nv" secondAttribute="leading" id="JxG-u4-LMy"/>
+                            <constraint firstItem="pDz-fA-1nv" firstAttribute="bottom" secondItem="g4u-aN-dkL" secondAttribute="bottom" id="m4a-Yn-htY"/>
+                            <constraint firstItem="g4u-aN-dkL" firstAttribute="top" secondItem="pDz-fA-1nv" secondAttribute="top" id="wTq-uY-xjj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="QQ1-DR-5Cn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CSZ-Mi-TSp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1842.0289855072465" y="124.55357142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="QaD-77-aLs">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9gu-7L-dSl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YrY-EC-oHr">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="1rO-gk-5Er"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CwY-id-Yqj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="581" y="807"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
